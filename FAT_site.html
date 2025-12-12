@@ -1,0 +1,253 @@
+<!-- 
+    This content block is stripped of <html>, <head>, and <body> tags
+    to make it suitable for embedding in an environment like Google Sites 
+    via an iframe or a custom HTML widget. 
+-->
+
+<!-- Load Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<div class="embedded-container min-h-screen" style="background-color: #0d111c; padding-top: 5rem;">
+
+    <style>
+        /* Re-apply body styles to the container/global scope for embedding */
+        .embedded-container {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            scroll-behavior: smooth;
+        }
+        /* Custom CSS for the dynamic pop-up words */
+        .pop-word {
+            position: fixed;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+            user-select: none;
+            opacity: 0;
+            z-index: 50;
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.5); /* Green Glow */
+            will-change: transform, opacity;
+            animation: pop-fade 4.5s ease-out forwards;
+        }
+
+        @keyframes pop-fade {
+            0% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--end-x, 0), var(--end-y, 0)) scale(0.5);
+                filter: blur(5px);
+            }
+        }
+    </style>
+
+    <!-- Header (Fixed to Top) -->
+    <header class="p-4 sm:p-6 bg-gray-900 shadow-xl w-full fixed top-0 left-0 right-0 z-10">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0 text-white">
+            <h1 class="text-4xl font-extrabold text-green-400">
+                FAT<span class="text-red-500 text-xl align-top">*</span>
+            </h1>
+            <nav class="space-x-3 sm:space-x-4 text-sm sm:text-base">
+                <a href="#about-fat" class="hover:text-green-300 transition">About Us</a>
+                <a href="#mission" class="hover:text-green-300 transition">Ethics</a>
+                <a href="#testimonials" class="hover:text-green-300 transition">Testimonials</a>
+                <a href="#contact" class="bg-red-600 hover:bg-red-700 p-2 rounded-lg font-bold transition">Enroll</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-4 sm:p-8 mt-16 text-white">
+        <div class="max-w-4xl mx-auto w-full text-center space-y-12">
+            
+            <!-- Hero Section -->
+            <div id="hero-title" class="space-y-4 pt-4 sm:pt-8 bg-gray-800/70 p-6 sm:p-12 rounded-2xl shadow-2xl backdrop-blur-sm">
+                <h2 class="text-5xl sm:text-7xl font-black leading-tight text-yellow-300">
+                    Financial Advisors <br> with Tourette's
+                </h2>
+                <p class="text-2xl sm:text-3xl font-light italic text-gray-300">
+                    Your Investment Strategy, <span class="font-bold text-red-400">Yelled</span>.
+                </p>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                    We're turning involuntary outbursts of high-stakes financial jargon into a cutting-edge (and highly stressful) client experience.
+                </p>
+            </div>
+            
+            <!-- About Us Section -->
+            <section id="about-fat" class="text-left space-y-4 pt-8 border-t-2 border-gray-700">
+                <h3 class="text-4xl font-extrabold text-red-500 border-b-2 border-red-500 pb-2">Why FAT? (The History)</h3>
+                <p class="text-lg text-gray-200">
+                    FAT was founded in 2018 during a particularly tense hostile takeover bid. Our founder, a brilliant but volatile derivatives trader, accidentally screamed "MARGIN CALL! LIQUIDATE THE BOARD!" during a crucial presentation. Instead of being fired, the other side panicked and folded.
+                </p>
+                <p class="text-lg text-gray-200">
+                    We realized our condition wasn't a liability—it was a chaotic, high-energy, market-moving asset. Today, we train advisors to harness the power of sudden, contextually inappropriate financial screaming. Our motto: *We don't just anticipate market panic; we generate it.*
+                </p>
+                <div class="p-4 bg-red-900/40 rounded-xl border-l-4 border-yellow-400">
+                    <p class="font-mono text-sm text-yellow-300">
+                        <span class="font-bold">Fact:</span> Our most successful fund manager only communicates in sudden, one-word shouts. His portfolio performance is surprisingly solid.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Ethics & Mission Section -->
+            <section id="mission" class="text-left space-y-4 pt-8 border-t-2 border-gray-700">
+                <h3 class="text-4xl font-extrabold text-green-400 border-b-2 border-green-500 pb-2">Our Ethics (Yes, We Have Them)</h3>
+                <p class="text-lg text-gray-200">
+                    Our core commitment is to *transparency*, which means everything we think—the good, the bad, and the nonsensical tax shelters—will eventually be shouted at you without warning. We provide the fastest, most unfiltered access to an advisor's subconscious mind in the entire industry.
+                </p>
+                <h4 class="text-2xl font-semibold text-green-300 mt-4">FAT's Core Tenets:</h4>
+                <ul class="text-lg text-gray-200 space-y-2 list-disc pl-6">
+                    <li><span class="font-semibold">Acceptance:</span> If we suddenly scream "INSIDER TRADING," we are legally required to clarify if that was a tic or actual advice. (It's usually a tic.)</li>
+                    <li><span class="font-semibold">Noise Discipline:</span> We provide complimentary noise-canceling headphones for clients. You'll need them.</li>
+                    <li><span class="font-semibold">Aggressive Returns:</span> We are loud. Our portfolios are, too.</li>
+                </ul>
+            </section>
+            
+            <!-- Testimonials Section -->
+            <section id="testimonials" class="text-left space-y-6 pt-8 border-t-2 border-gray-700">
+                <h3 class="text-4xl font-extrabold text-yellow-300 border-b-2 border-yellow-300 pb-2">Client Testimonials</h3>
+                
+                <!-- Testimonial 1: Jonathan Fike -->
+                <div class="p-6 bg-gray-700 rounded-xl shadow-lg border-l-4 border-red-600">
+                    <p class="italic text-gray-100 leading-relaxed">
+                        "I was discussing my retirement plan with my FAT advisor when he suddenly stood up, pointed at my portfolio summary, and screamed 'DOLLAR-COST AVERAGING! BUY LOW! I'M FILING FOR BANKRUPTCY! DIVERSIFY!' It was terrifying, but honestly, the 'diversify' part was solid advice. My stress levels are through the roof, but so are my returns."
+                    </p>
+                    <p class="mt-4 font-bold text-red-400">— Jonathan Fike, Client since 2023</p>
+                </div>
+                
+                <!-- Testimonial 2: Sarah K. -->
+                <div class="p-6 bg-gray-700 rounded-xl shadow-lg border-l-4 border-green-600">
+                    <p class="italic text-gray-100 leading-relaxed">
+                        "The first meeting was rough—I learned more about subprime mortgages than I ever wanted to. But now I barely notice when my advisor screams 'JUNK BONDS' instead of 'hello.' We've developed a great system: if the tic is an asset class, ignore it; if it's a number, write it down."
+                    </p>
+                    <p class="mt-4 font-bold text-green-400">— Sarah K., Early Investor</p>
+                </div>
+            </section>
+
+            <!-- Call to Action (Contact) Section -->
+            <section id="contact" class="pt-8 pb-12">
+                <h3 class="text-3xl font-bold text-green-400 border-b-2 border-green-500 pb-2 mb-6">Want To Get Loud?</h3>
+                <p class="text-gray-300 mb-6">If you're ready for an environment where "MORTGAGE-BACKED SECURITIES!" is a term of endearment, join us.</p>
+                <button class="w-full sm:w-auto px-8 py-4 bg-red-600 hover:bg-red-700 text-xl font-extrabold rounded-xl transition duration-300 transform hover:scale-105 shadow-lg">
+                    APPLY FOR FAT MEMBERSHIP TODAY!
+                </button>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer class="p-4 text-center text-sm text-gray-500 bg-gray-900/50 mt-auto">
+        <p>*FAT is a fictional organization. Do not attempt to replicate this level of chaos in a real brokerage environment. We are not responsible for broken windows or client distress. TAX AVOIDANCE!</p>
+    </footer>
+
+    <script>
+        // Global Constants
+        const randomFinancialWords = [
+            "VOLATILITY", "LEVERAGE", "LIQUIDITY", "ARBITRAGE", "FIDUCIARY",
+            "DIVIDEND", "HEDGE FUND", "SECURITIES", "TREASURY", "FOREX", 
+            "OPTIONS", "BULL MARKET", "BEAR TRAP", "COMMODITIES", "EQUITY", 
+            "CAPITAL GAINS", "SUBPRIME", "FUTURES", "SHORT SELL", "ANNUAL REPORT"
+        ];
+        
+        const fixedServiceWords = [
+            "customer service", 
+            "mutual funds", 
+            "life insurance", 
+            "annuities", 
+            "shredder services"
+        ];
+
+        let popUpCount = 0;
+        let lastTimeoutId = null;
+
+        function getNextWord() {
+            popUpCount++;
+            if (popUpCount % 2 !== 0) {
+                const randomIndex = Math.floor(Math.random() * randomFinancialWords.length);
+                return {
+                    text: randomFinancialWords[randomIndex],
+                    isRandom: true
+                };
+            } else {
+                const randomIndex = Math.floor(Math.random() * fixedServiceWords.length);
+                return {
+                    text: fixedServiceWords[randomIndex],
+                    isRandom: false
+                };
+            }
+        }
+
+        function createPopUp(wordText, isRandom) {
+            const wordElement = document.createElement('div');
+            wordElement.textContent = wordText;
+
+            wordElement.classList.add('pop-word', 'px-3', 'py-1', 'rounded-xl', 'text-center');
+
+            if (isRandom) {
+                wordElement.classList.add('bg-red-600/30', 'text-yellow-300');
+                wordElement.style.fontSize = Math.random() < 0.5 ? '4rem' : '5rem';
+                wordElement.style.fontWeight = '900';
+            } else {
+                wordElement.classList.add('bg-green-600/30', 'text-green-400', 'italic');
+                wordElement.style.fontSize = '2.5rem';
+                wordElement.style.fontWeight = '700';
+            }
+
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
+
+            const startX = viewportWidth / 2;
+            const startY = viewportHeight / 2;
+            
+            const jitterX = Math.floor(Math.random() * 200 - 100);
+            const jitterY = Math.floor(Math.random() * 200 - 100);
+
+            wordElement.style.left = `${startX + jitterX}px`;
+            wordElement.style.top = `${startY + jitterY}px`;
+            
+            const endXOffset = Math.floor(Math.random() * viewportWidth * 0.7) * (Math.random() < 0.5 ? 1 : -1);
+            const endYOffset = Math.floor(Math.random() * viewportHeight * 0.7) * (Math.random() < 0.5 ? 1 : -1);
+
+            wordElement.style.setProperty('--end-x', `${endXOffset}px`);
+            wordElement.style.setProperty('--end-y', `${endYOffset}px`);
+
+
+            document.body.appendChild(wordElement);
+
+            setTimeout(() => {
+                wordElement.remove();
+            }, 4500);
+        }
+
+        function scheduleNextPopUp() {
+            if (lastTimeoutId) {
+                clearTimeout(lastTimeoutId);
+            }
+
+            const randomDelay = Math.random() * 4000 + 1000; 
+
+            lastTimeoutId = setTimeout(() => {
+                const { text, isRandom } = getNextWord();
+                createPopUp(text, isRandom);
+                
+                scheduleNextPopUp();
+            }, randomDelay);
+        }
+
+        // Start the continuous loop when the page loads
+        window.onload = function() {
+            scheduleNextPopUp();
+        };
+
+    </script>
+</div>
